@@ -1,3 +1,5 @@
-.App {
-  text-align: center;
+@import "../components/hero/_style.scss";
+
+body {
+  color: rgb(167, 77, 18);
 }
