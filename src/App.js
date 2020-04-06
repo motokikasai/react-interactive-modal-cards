@@ -30,7 +30,7 @@ function App() {
                     <span>{member.firstName} </span>
                     <span>{member.lastName}</span>
                   </div>
-                  <div>{member.jobTitle}</div>
+                  <div className="job-title">{member.jobTitle}</div>
                 </div>
               </div>
             );
