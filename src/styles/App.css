@@ -4,3 +4,59 @@
 body {
   color: rgb(167, 77, 18);
 }
+
+.main-subheader {
+  padding: 60px;
+}
+
+main {
+  padding: 40px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  position: relative;
+  flex-basis: 200px;
+  flex-grow: 1;
+  /* border: 1px solid rgb(207, 207, 207); */
+  border-radius: 5px;
+  padding: 40px;
+  margin: 20px;
+  box-shadow: 9px 9px 16px rgba(175, 175, 175, 0.5);
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.bg-dark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 111px;
+  background: rgb(63, 63, 63);
+  border-radius: 5px 5px 0 0;
+  z-index: -1;
+}
+
+.numOfMembers {
+  color: hotpink;
+  font-size: 2rem;
+  padding: 0 10px;
+}
+
+footer {
+  padding: 20px;
+  background: rgb(236, 236, 236);
+  text-align: right;
+}
+
+img.avatar {
+  border-radius: 50%;
+  border: 4px solid rgb(63, 63, 63);
+  filter: grayscale(0.8);
+}
