@@ -1,4 +1,5 @@
 @import "../components/hero/_style.scss";
+@import url("https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap");
 
 body {
   color: rgb(167, 77, 18);
