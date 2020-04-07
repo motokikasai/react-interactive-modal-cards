@@ -1,0 +1,160 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: rgb(14, 202, 155);
+}
+
+.dark-overlay {
+  position: fixed;
+  content: "";
+  top: 0;
+  left: 0;
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section.card-overlay {
+  position: fixed;
+  z-index: 999;
+  max-width: 900px;
+
+  background: white;
+  color: rgb(65, 65, 65);
+  border-radius: 5px;
+  box-shadow: 0 0 40px rgb(27, 27, 27);
+  transform: translateX(-7px);
+}
+
+header {
+  background: var(--primary-color);
+  border-radius: 5px 5px 0 0;
+  height: 100%;
+  padding: 14px;
+  color: white;
+  box-shadow: 0 4px 14px -8px rgb(182, 182, 182);
+}
+
+h2 {
+  margin: 0;
+}
+
+.overlay-content {
+  padding: 10px 30px;
+  max-height: 100px;
+  overflow: auto;
+}
+
+.checkbox {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: -75px;
+  right: -1px;
+  opacity: 0;
+  z-index: 1;
+  /* border: 1px solid hotpink; */
+  /* transition: 0.4s; */
+}
+
+.checkbox:checked ~ article {
+  --primary-color: rgb(255, 148, 9);
+}
+
+.checkbox:hover ~ article aside .switch-button {
+  transform: rotate(90deg);
+}
+
+.checkbox:active ~ article > aside {
+  opacity: 0.4;
+}
+
+.switch-button {
+  border: 4px solid rgb(139, 139, 139);
+  border-radius: 4px;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: -73px;
+  right: 2px;
+  transition: 0.2s;
+}
+
+.switch-button::before,
+.switch-button::after {
+  position: absolute;
+  top: 22px;
+  right: 1px;
+  content: "";
+  width: 50px;
+  height: 8px;
+  background: rgb(255, 255, 255);
+  transform: rotate(45deg);
+  border-radius: 6px;
+}
+
+.switch-button::after {
+  transform: rotate(135deg);
+}
+
+.footer-overlay {
+  background: white;
+  border-top: 1px solid rgb(216, 216, 216);
+  border-radius: 0 0 5px 5px;
+
+  top: 331px;
+  color: white;
+  padding: 20px;
+  box-shadow: 0 -4px 14px -8px rgb(211, 211, 211);
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  padding: 10px 40px;
+  font-size: 1.2rem;
+}
+
+button:active {
+  background: seagreen;
+}
+
+.left {
+  color: var(--primary-color);
+  background: transparent;
+}
+
+.right {
+  color: white;
+  border: 1px solid rgb(202, 152, 36);
+  background: var(--primary-color);
+}
+
+.html-body {
+  --primary-color: rgb(119, 0, 0);
+}
+
+/* ---------------------------------
+* media query
+* ---------------------------------- */
+
+@media (max-width: 870px) {
+  section.card-overlay {
+    /* display: flex;
+      flex-direction: column; */
+    bottom: 0px;
+    width: 98vw;
+  }
+}

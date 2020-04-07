@@ -1,6 +1,7 @@
 @import "../components/hero/_style.scss";
 @import url("https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap");
 @import "../components/modal/_style.scss";
+@import "../components/card/_style.scss";
 
 body {
   color: rgb(167, 77, 18);

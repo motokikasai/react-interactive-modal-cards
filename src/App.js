@@ -4,22 +4,8 @@ import data from "../src/employees.json";
 import Hero from "./components/hero/";
 import Modal from "./components/modal/";
 
-// import styled, { keyframes } from "styled-components";
-// import bounce from "react-animations/lib/bounce";
-
 function App() {
   const numOfMembers = data.length;
-
-  // const bounceAnimation = keyframes`${bounce}`;
-  // const Bounce = styled.div`
-  //   animation: 2s ${keyframes} ${bounceAnimation} infinite;
-  // `;
-
-  // const handleClick = () => {
-  //   console.log("clicked!");
-
-  //   document.body.style.backgroundColor = "black";
-  // };
 
   return (
     <div className="App">
@@ -33,7 +19,7 @@ function App() {
 
         <Modal data={data} />
       </section>
-      <footer>
+      <footer className="base-footer">
         <div>
           Icons made by{" "}
           <a href="https://www.flaticon.com/authors/freepik" title="Freepik">

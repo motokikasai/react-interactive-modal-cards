@@ -1,4 +1,5 @@
 import React from "react";
+import Card from "../card";
 
 class Modal extends React.Component {
   constructor(props) {
@@ -7,6 +8,12 @@ class Modal extends React.Component {
     this.state = {
       dummy: "one",
     };
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    console.log(this, "Clicked!!!!!");
   }
 
   render() {
@@ -14,7 +21,7 @@ class Modal extends React.Component {
       <main>
         {this.props.data.map((member) => {
           return (
-            <div className="card" key={member.id}>
+            <div onClick={this.handleClick} className="card" key={member.id}>
               <div className="bg-dark"></div>
               <div className="card-content">
                 <img
@@ -32,6 +39,10 @@ class Modal extends React.Component {
             </div>
           );
         })}
+
+        <div className="overlay-card">
+          <Card datum={this.props.data} />
+        </div>
       </main>
     );
   }
