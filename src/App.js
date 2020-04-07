@@ -2,9 +2,24 @@ import React from "react";
 import "./styles/App.css";
 import data from "../src/employees.json";
 import Hero from "./components/hero/";
+import Modal from "./components/modal/";
+
+// import styled, { keyframes } from "styled-components";
+// import bounce from "react-animations/lib/bounce";
 
 function App() {
   const numOfMembers = data.length;
+
+  // const bounceAnimation = keyframes`${bounce}`;
+  // const Bounce = styled.div`
+  //   animation: 2s ${keyframes} ${bounceAnimation} infinite;
+  // `;
+
+  // const handleClick = () => {
+  //   console.log("clicked!");
+
+  //   document.body.style.backgroundColor = "black";
+  // };
 
   return (
     <div className="App">
@@ -15,27 +30,8 @@ function App() {
           strategists, designers, managers, developers make custom products for
           startups and leading brands.
         </h2>
-        <main>
-          {data.map((member, key) => {
-            return (
-              <div className="card" key={member.id}>
-                <div className="bg-dark"></div>
-                <div className="card-content">
-                  <img
-                    className="avatar"
-                    src={member.avatar}
-                    alt={member.firstName}
-                  />
-                  <div className="full-name">
-                    <span>{member.firstName} </span>
-                    <span>{member.lastName}</span>
-                  </div>
-                  <div className="job-title">{member.jobTitle}</div>
-                </div>
-              </div>
-            );
-          })}
-        </main>
+
+        <Modal data={data} />
       </section>
       <footer>
         <div>

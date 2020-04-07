@@ -1,5 +1,6 @@
 @import "../components/hero/_style.scss";
 @import url("https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap");
+@import "../components/modal/_style.scss";
 
 body {
   color: rgb(167, 77, 18);
@@ -7,75 +8,4 @@ body {
 
 .main-subheader {
   padding: 60px;
-}
-
-main {
-  padding: 40px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.card {
-  position: relative;
-  flex-basis: 200px;
-  flex-grow: 1;
-  /* border: 1px solid rgb(207, 207, 207); */
-  border-radius: 5px;
-  padding: 40px;
-  margin: 20px;
-  box-shadow: 9px 9px 16px rgba(175, 175, 175, 0.5);
-}
-
-.card-content {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.bg-dark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 111px;
-  background: rgb(63, 63, 63);
-  border-radius: 5px 5px 0 0;
-  z-index: -1;
-}
-
-.numOfMembers {
-  color: hotpink;
-  font-size: 2rem;
-  padding: 0 10px;
-}
-
-footer {
-  padding: 20px;
-  background: rgb(236, 236, 236);
-  text-align: right;
-}
-
-img.avatar {
-  border-radius: 50%;
-  border: 4px solid rgb(63, 63, 63);
-  filter: grayscale(0.8);
-}
-
-.full-name {
-  padding: 14px;
-  padding-bottom: 8px;
-  font-size: 1.1rem;
-  font-weight: bold;
-}
-
-.job-title {
-  font-size: 0.7rem;
-}
-
-.filler::after {
-  content: "";
-  position: relative;
-  flex-basis: 200px;
-  flex-grow: 10000000000;
 }
