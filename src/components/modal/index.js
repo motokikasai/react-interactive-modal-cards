@@ -7,6 +7,7 @@ class Modal extends React.Component {
 
     this.state = {
       isOpen: false,
+      member: {},
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -14,16 +15,18 @@ class Modal extends React.Component {
   }
 
   handleClick(e) {
-    console.log(e.currentTarget);
+    let memberById = this.props.data.filter((member) => {
+      return member.id === e.currentTarget.id;
+    });
+    memberById = memberById[0];
 
     this.setState({
       isOpen: true,
+      member: memberById,
     });
   }
 
   reset() {
-    console.log("yhhheaeaeraer!");
-
     this.setState({
       isOpen: false,
     });
@@ -34,7 +37,12 @@ class Modal extends React.Component {
       <main>
         {this.props.data.map((member) => {
           return (
-            <div onClick={this.handleClick} className="card" key={member.id}>
+            <div
+              onClick={this.handleClick}
+              id={member.id}
+              className="card"
+              key={member.id}
+            >
               <div className="bg-dark"></div>
               <div className="card-content">
                 <img
@@ -55,7 +63,7 @@ class Modal extends React.Component {
 
         <div className="overlay-card">
           {this.state.isOpen === true ? (
-            <Card datum={this.props.data} reset={this.reset} />
+            <Card datum={this.props.data} reset={this.reset} {...this.state} />
           ) : null}
         </div>
       </main>

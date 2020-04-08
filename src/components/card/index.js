@@ -1,15 +1,17 @@
 import React from "react";
 
 class Card extends React.Component {
-  constructor(props) {
-    super(props);
+  // constructor(props) {
+  //   super(props);
 
-    this.state = {
-      isChecked: false,
-    };
-  }
+  //   this.state = {
+  //     member: null,
+  //   };
+  // }
 
   render() {
+    console.log(this.props.member);
+
     return (
       <div className="dark-overlay">
         <section className="card-overlay">
