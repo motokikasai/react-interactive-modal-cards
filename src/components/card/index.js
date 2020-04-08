@@ -31,23 +31,27 @@ class Card extends React.Component {
             </header>
             <div className="overlay-content">
               <div className="profile-pic">
-                <img src={this.props.datum.avatar} alt="" />
+                <img
+                  src={this.props.member.avatar}
+                  alt={this.props.member.firstName}
+                />
               </div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
-                neque dolorem distinctio, earum dicta mollitia? Eligendi
-                explicabo excepturi sed culpa.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
-                neque dolorem distinctio, earum dicta mollitia? Eligendi
-                explicabo excepturi sed culpa.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
-                neque dolorem distinctio, earum dicta mollitia? Eligendi
-                explicabo excepturi sed culpa.
-              </p>
+              <div className="card-department">
+                {this.props.member.department}
+              </div>
+              <div className="card-job-title">{this.props.member.jobTitle}</div>
+              <p>{this.props.member.bio}</p>
+              <div className="contact">
+                <span className="contact-info phone">
+                  {this.props.member.contact.phone}
+                </span>
+                <span className="contact-info email">
+                  {this.props.member.contact.email}
+                </span>
+                <span className="contact-info url">
+                  {this.props.member.contact.url}
+                </span>
+              </div>
             </div>
             <footer className="footer-overlay">
               <button className="left">&#8249; Previous</button>

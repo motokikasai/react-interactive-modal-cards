@@ -1,9 +1,3 @@
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-}
-
 :root {
   --primary-color: rgb(14, 202, 155);
 }
@@ -50,17 +44,46 @@ h2 {
 }
 
 .overlay-content {
-  padding: 10px 30px;
-  max-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px 140px;
+  height: 300px;
   overflow: auto;
+  color: rgb(73, 73, 73);
+}
+
+.profile-pic img {
+  border-radius: 6px;
+}
+
+.card-department {
+  margin: 4px;
+  font-size: 1.2rem;
+  color: gray;
+}
+
+.card-job-title {
+  font-size: 1.4rem;
+  color: gray;
+  margin-bottom: 20px;
+}
+
+.contact {
+  margin: 40px 0;
+}
+
+.contact-info {
+  margin: 0 20px;
 }
 
 .checkbox {
   position: absolute;
   width: 60px;
   height: 60px;
-  top: -75px;
-  right: -1px;
+  top: -72px;
+  right: 3px;
   opacity: 0;
   z-index: 1;
   /* border: 1px solid hotpink; */
@@ -93,8 +116,8 @@ h2 {
 .switch-button::before,
 .switch-button::after {
   position: absolute;
-  top: 22px;
-  right: 1px;
+  top: 26px;
+  right: 5px;
   content: "";
   width: 50px;
   height: 8px;
@@ -152,9 +175,11 @@ button:active {
 
 @media (max-width: 870px) {
   section.card-overlay {
-    /* display: flex;
-      flex-direction: column; */
     bottom: 0px;
     width: 98vw;
+  }
+
+  .overlay-content {
+    padding: 30px;
   }
 }
