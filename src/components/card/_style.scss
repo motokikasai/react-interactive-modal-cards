@@ -150,8 +150,13 @@ button {
   font-size: 1.2rem;
 }
 
-button:active {
+button.right:active {
   background: seagreen;
+}
+
+button.left:active {
+  background: rgb(164, 221, 193);
+  color: white;
 }
 
 .left {
