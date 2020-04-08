@@ -6,14 +6,27 @@ class Modal extends React.Component {
     super(props);
 
     this.state = {
-      dummy: "one",
+      isOpen: false,
     };
 
     this.handleClick = this.handleClick.bind(this);
+    this.reset = this.reset.bind(this);
   }
 
-  handleClick() {
-    console.log(this, "Clicked!!!!!");
+  handleClick(e) {
+    console.log(e.currentTarget);
+
+    this.setState({
+      isOpen: true,
+    });
+  }
+
+  reset() {
+    console.log("yhhheaeaeraer!");
+
+    this.setState({
+      isOpen: false,
+    });
   }
 
   render() {
@@ -41,7 +54,9 @@ class Modal extends React.Component {
         })}
 
         <div className="overlay-card">
-          <Card datum={this.props.data} />
+          {this.state.isOpen === true ? (
+            <Card datum={this.props.data} reset={this.reset} />
+          ) : null}
         </div>
       </main>
     );

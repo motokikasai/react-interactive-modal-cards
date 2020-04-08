@@ -5,23 +5,32 @@ class Card extends React.Component {
     super(props);
 
     this.state = {
-      dummy: "two",
+      isChecked: false,
     };
   }
 
   render() {
     return (
       <div className="dark-overlay">
-        <section class="card-overlay">
-          <input id="checkbox" type="checkbox" class="checkbox" name="name" />
+        <section className="card-overlay">
+          <input
+            id="checkbox"
+            type="checkbox"
+            className="checkbox"
+            name="name"
+            onChange={() => this.props.reset()}
+          />
           <article>
             <aside>
-              <div id="random-color-container" class="switch-button"></div>
+              <div id="random-color-container" className="switch-button"></div>
             </aside>
             <header>
               <h2>Modal Window Title!</h2>
             </header>
-            <div class="overlay-content">
+            <div className="overlay-content">
+              <div className="profile-pic">
+                <img src={this.props.datum.avatar} alt="" />
+              </div>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
                 neque dolorem distinctio, earum dicta mollitia? Eligendi
@@ -39,9 +48,9 @@ class Card extends React.Component {
               </p>
             </div>
             <footer className="footer-overlay">
-              <button class="left">&#8249; Previous</button>
+              <button className="left">&#8249; Previous</button>
 
-              <button id="random-color" class="right">
+              <button id="random-color" className="right">
                 Next &#8250;
               </button>
             </footer>
