@@ -18,6 +18,7 @@ class Modal extends React.Component {
     let memberById = this.props.data.filter((member) => {
       return member.id === e.currentTarget.id;
     });
+
     memberById = memberById[0];
 
     this.setState({
@@ -63,7 +64,7 @@ class Modal extends React.Component {
 
         <div className="overlay-card">
           {this.state.isOpen === true ? (
-            <Card datum={this.props.data} reset={this.reset} {...this.state} />
+            <Card data={this.props.data} reset={this.reset} {...this.state} />
           ) : null}
         </div>
       </main>
