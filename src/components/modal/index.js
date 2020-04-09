@@ -69,8 +69,16 @@ class Modal extends React.Component {
               data={this.props.data}
               reset={this.reset}
               {...this.state}
-              theme="sunshine"
-            />
+              theme="deep-purple"
+            >
+              <span role="img" aria-label="Thunder">
+                &#9889;
+              </span>{" "}
+              Meet our crew ON FIRE!{" "}
+              <span role="img" aria-label="fire">
+                &#128293;&#128293;&#128293;
+              </span>
+            </Card>
           ) : null}
         </div>
       </main>

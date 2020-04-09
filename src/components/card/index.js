@@ -1,4 +1,7 @@
 import React from "react";
+import phoneIcon from "../../assets/phone.svg";
+import emailIcon from "../../assets/mail.svg";
+import urlIcon from "../../assets/url.svg";
 
 class Card extends React.Component {
   constructor(props) {
@@ -6,6 +9,18 @@ class Card extends React.Component {
 
     this.state = {
       member: this.props.member,
+      phone: {
+        info: this.props.member.contact.phone,
+        icon: phoneIcon,
+      },
+      email: {
+        info: this.props.member.contact.email,
+        icon: emailIcon,
+      },
+      url: {
+        info: this.props.member.contact.url,
+        icon: urlIcon,
+      },
     };
 
     this.next = this.next.bind(this);
@@ -53,9 +68,7 @@ class Card extends React.Component {
               <div id="random-color-container" className="switch-button"></div>
             </aside>
             <header className={this.props.theme}>
-              <h2>
-                {this.state.member.firstName} {this.state.member.lastName}
-              </h2>
+              <h2>{this.props.children}</h2>
             </header>
             <div className="overlay-content">
               <div className="profile-pic">
