@@ -83,11 +83,32 @@ class Card extends React.Component {
               <div className="card-job-title">{this.state.member.jobTitle}</div>
               <p>{this.state.member.bio}</p>
               <div className="contact">
+                <span>
+                  <img
+                    src={this.state.phone.icon}
+                    alt={this.state.phone.info}
+                    className="contact-icon"
+                  />
+                </span>
                 <span className="contact-info phone">
                   {this.state.member.contact.phone}
                 </span>
+                <span>
+                  <img
+                    src={this.state.email.icon}
+                    alt={this.state.email.info}
+                    className="contact-icon"
+                  />
+                </span>
                 <span className="contact-info email">
                   {this.state.member.contact.email}
+                </span>
+                <span>
+                  <img
+                    src={this.state.url.icon}
+                    alt={this.state.url.info}
+                    className="contact-icon"
+                  />
                 </span>
                 <span className="contact-info url">
                   {this.state.member.contact.url}
