@@ -1,5 +1,17 @@
 :root {
-  --primary-color: rgb(14, 202, 155);
+  --default-color: rgb(46, 46, 46);
+}
+
+.sunshine {
+  background: rgb(241, 208, 23) !important;
+}
+
+.deep-purple {
+  background: rgb(129, 0, 101) !important;
+}
+
+.roasted-peppers {
+  background: rgb(212, 58, 11) !important;
 }
 
 .dark-overlay {
@@ -31,7 +43,7 @@ section.card-overlay {
 }
 
 header {
-  background: var(--primary-color);
+  background: var(--default-color);
   border-radius: 5px 5px 0 0;
   height: 100%;
   padding: 14px;
@@ -90,10 +102,6 @@ h2 {
   /* transition: 0.4s; */
 }
 
-.checkbox:checked ~ article {
-  --primary-color: rgb(255, 148, 9);
-}
-
 .checkbox:hover ~ article aside .switch-button {
   transform: rotate(90deg);
 }
@@ -144,34 +152,33 @@ h2 {
 }
 
 button {
-  border: 1px solid var(--primary-color);
+  border: 1px solid var(--default-color);
   border-radius: 4px;
   padding: 10px 40px;
   font-size: 1.2rem;
 }
 
 button.right:active {
-  background: seagreen;
+  opacity: 0.8;
 }
 
 button.left:active {
-  background: rgb(164, 221, 193);
-  color: white;
+  background: rgb(226, 226, 226);
 }
 
 .left {
-  color: var(--primary-color);
+  color: var(--default-color);
   background: transparent;
 }
 
 .right {
   color: white;
   border: 1px solid rgb(202, 152, 36);
-  background: var(--primary-color);
+  background: var(--default-color);
 }
 
 .html-body {
-  --primary-color: rgb(119, 0, 0);
+  --default-color: rgb(119, 0, 0);
 }
 
 /* ---------------------------------

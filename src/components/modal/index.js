@@ -64,7 +64,13 @@ class Modal extends React.Component {
 
         <div className="overlay-card">
           {this.state.isOpen === true ? (
-            <Card data={this.props.data} reset={this.reset} {...this.state} />
+            // THEME OPTIONS: sunshine, deep-purple, roasted-peppers
+            <Card
+              data={this.props.data}
+              reset={this.reset}
+              {...this.state}
+              theme="sunshine"
+            />
           ) : null}
         </div>
       </main>

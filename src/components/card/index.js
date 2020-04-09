@@ -52,8 +52,10 @@ class Card extends React.Component {
             <aside>
               <div id="random-color-container" className="switch-button"></div>
             </aside>
-            <header>
-              <h2>Modal Window Title!</h2>
+            <header className={this.props.theme}>
+              <h2>
+                {this.state.member.firstName} {this.state.member.lastName}
+              </h2>
             </header>
             <div className="overlay-content">
               <div className="profile-pic">
@@ -83,7 +85,10 @@ class Card extends React.Component {
               <button onClick={this.prev} className="left">
                 &#8249; Previous
               </button>
-              <button onClick={this.next} className="right">
+              <button
+                onClick={this.next}
+                className={`right ${this.props.theme}`}
+              >
                 Next &#8250;
               </button>
             </footer>
