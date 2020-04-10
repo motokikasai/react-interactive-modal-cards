@@ -14,7 +14,6 @@ class Hero extends React.Component {
   render() {
     return (
       <section className="hero">
-        <div className="bg-skew"></div>
         <section className="header-content">
           <div className="company">
             <span className="logo" role="img" aria-label="logo">

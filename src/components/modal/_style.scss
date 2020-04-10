@@ -1,15 +1,13 @@
 main {
+  max-width: 1700px;
+  margin: 0 auto;
   padding: 40px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .card {
   position: relative;
-  flex-basis: 200px;
-  flex-grow: 1;
-  /* border: 1px solid rgb(207, 207, 207); */
   border-radius: 5px;
   padding: 40px;
   margin: 20px;
@@ -70,4 +68,25 @@ img.avatar {
 
 .job-title {
   font-size: 0.7rem;
+}
+
+@media (max-width: 1500px) {
+  main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1100px) {
+  main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 750px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }
