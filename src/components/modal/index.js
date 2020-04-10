@@ -37,6 +37,14 @@ class Modal extends React.Component {
     return (
       <main>
         {this.props.data.map((member) => {
+          const randomBG = {
+            background: `hsl(${Math.floor(Math.random() * 360)}, ${Math.floor(
+              Math.random() * 40
+            )}%, 40%)`,
+          };
+
+          console.log(randomBG);
+
           return (
             <div
               onClick={this.handleClick}
@@ -44,7 +52,7 @@ class Modal extends React.Component {
               className="card"
               key={member.id}
             >
-              <div className="bg-dark"></div>
+              <div className="bg-dark" style={randomBG}></div>
               <div className="card-content">
                 <img
                   className="avatar"
