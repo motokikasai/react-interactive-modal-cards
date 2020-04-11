@@ -3,7 +3,7 @@ main {
   margin: 0 auto;
   padding: 40px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(340px, auto));
 }
 
 .card {
@@ -68,25 +68,4 @@ img.avatar {
 
 .job-title {
   font-size: 0.7rem;
-}
-
-@media (max-width: 1500px) {
-  main {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 1100px) {
-  main {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 750px) {
-  main {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
 }

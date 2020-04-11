@@ -43,8 +43,6 @@ class Modal extends React.Component {
             )}%, 40%)`,
           };
 
-          console.log(randomBG);
-
           return (
             <div
               onClick={this.handleClick}
