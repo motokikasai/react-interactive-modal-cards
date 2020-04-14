@@ -5,9 +5,9 @@ class Modal extends React.Component {
     return (
       <section>
         {this.props.data.isOpen === true ? (
-          <div className="overlay-card">
+          <div className="overlay">
             <div className="dark-overlay">
-              <section className="card-overlay">
+              <section className="card-main">
                 <input
                   id="checkbox"
                   type="checkbox"
