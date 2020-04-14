@@ -15,11 +15,14 @@ class App extends React.Component {
     };
 
     this.numOfMembers = data.length;
-    this.handleClick = this.handleClick.bind(this);
+    this.handleOpen = this.handleOpen.bind(this);
     this.reset = this.reset.bind(this);
+    this.findIndex = this.findIndex.bind(this);
+    this.handleNext = this.handleNext.bind(this);
+    this.handlePrev = this.handlePrev.bind(this);
   }
 
-  handleClick(e) {
+  handleOpen(e) {
     let memberById = data.filter((member) => {
       return member.id === e.currentTarget.id;
     });
@@ -30,6 +33,30 @@ class App extends React.Component {
       isOpen: true,
       member: memberById,
     });
+  }
+
+  findIndex() {
+    this.index = data.findIndex((item) => {
+      return item.id === this.state.member.id;
+    });
+  }
+
+  handleNext() {
+    this.findIndex();
+    this.index === data.length - 1
+      ? this.setState({ member: data[0] })
+      : this.setState({
+          member: data[this.index + 1],
+        });
+  }
+
+  handlePrev() {
+    this.findIndex();
+    this.index === 0
+      ? this.setState({ member: data[data.length - 1] })
+      : this.setState({
+          member: data[this.index - 1],
+        });
   }
 
   reset() {
@@ -49,8 +76,6 @@ class App extends React.Component {
             for startups and leading brands.
           </h2>
 
-          {/* <Modal data={data} /> */}
-
           <div className="grid-card">
             {data.map((member) => {
               const randomBG = {
@@ -61,7 +86,7 @@ class App extends React.Component {
 
               return (
                 <div
-                  onClick={this.handleClick}
+                  onClick={this.handleOpen}
                   id={member.id}
                   className="card"
                   key={member.id}
@@ -85,7 +110,13 @@ class App extends React.Component {
             })}
           </div>
 
-          <Modal data={this.state} source={data} reset={this.reset}>
+          <Modal
+            data={this.state}
+            source={data}
+            reset={this.reset}
+            next={this.handleNext}
+            prev={this.handlePrev}
+          >
             <div className="overlay-content">
               <div className="profile-pic">
                 <img

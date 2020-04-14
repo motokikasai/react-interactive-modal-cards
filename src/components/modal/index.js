@@ -1,58 +1,11 @@
 import React from "react";
-// import Card from "../card";
 
 class Modal extends React.Component {
-  // constructor(props) {
-  //   super(props);
-
-  // this.state = {
-  //   isOpen: false,
-  //   member: {},
-  // };
-
-  // this.handleClick = this.handleClick.bind(this);
-  // this.reset = this.reset.bind(this);
-  // }
-
-  // handleClick(e) {
-  //   let memberById = this.props.data.filter((member) => {
-  //     return member.id === e.currentTarget.id;
-  //   });
-
-  //   memberById = memberById[0];
-
-  //   this.setState({
-  //     isOpen: true,
-  //     member: memberById,
-  //   });
-  // }
-
-  // reset() {
-  //   this.setState({
-  //     isOpen: false,
-  //   });
-  // }
-
   render() {
     return (
       <section>
         {this.props.data.isOpen === true ? (
           <div className="overlay-card">
-            {/* <Card
-              data={this.props.data}
-              reset={this.reset}
-              {...this.state}
-              theme="deep-purple"
-            >
-              <span role="img" aria-label="Thunder">
-                &#9889;
-              </span>{" "}
-              Meet our crew ON FIRE!{" "}
-              <span role="img" aria-label="fire">
-                &#128293;&#128293;&#128293;
-              </span>
-            </Card> */}
-
             <div className="dark-overlay">
               <section className="card-overlay">
                 <input
@@ -75,6 +28,8 @@ class Modal extends React.Component {
                       {this.props.data.member.lastName}
                     </h2>
                   </header>
+
+                  {/* MAIN CONTENT HERE ------------------- */}
                   {this.props.children}
 
                   {/* <div className="overlay-content">
@@ -125,14 +80,11 @@ class Modal extends React.Component {
                     </div>
                   </div> */}
                   <footer className="footer-overlay">
-                    <button
-                      // onClick={this.prev}
-                      className="left"
-                    >
+                    <button onClick={this.props.prev} className="left">
                       &#8249; Previous
                     </button>
                     <button
-                      // onClick={this.next}
+                      onClick={this.props.next}
                       className={`right ${this.props.theme}`}
                     >
                       Next &#8250;
