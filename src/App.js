@@ -84,11 +84,11 @@ class App extends React.Component {
 
           <div className="grid-card">
             {data.map((member) => {
-              const randomBG = {
-                background: `hsl(${Math.floor(
-                  Math.random() * 360
-                )}, ${Math.floor(Math.random() * 40)}%, 40%)`,
-              };
+              // const randomBG = {
+              //   background: `hsl(${Math.floor(
+              //     Math.random() * 360
+              //   )}, ${Math.floor(Math.random() * 40)}%, 40%)`,
+              // };
 
               return (
                 <div
@@ -97,7 +97,7 @@ class App extends React.Component {
                   className="card"
                   key={member.id}
                 >
-                  <div className="bg-dark" style={randomBG}></div>
+                  <div className="bg-dark"></div>
                   <div className="card-content">
                     <img
                       className="avatar"
