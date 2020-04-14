@@ -10,3 +10,10 @@ body {
 .main-subheader {
   padding: 60px;
 }
+
+.grid-card {
+  max-width: 1700px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, auto));
+}

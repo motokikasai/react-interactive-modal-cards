@@ -10,33 +10,33 @@ class Modal extends React.Component {
       member: {},
     };
 
-    this.handleClick = this.handleClick.bind(this);
-    this.reset = this.reset.bind(this);
+    // this.handleClick = this.handleClick.bind(this);
+    // this.reset = this.reset.bind(this);
   }
 
-  handleClick(e) {
-    let memberById = this.props.data.filter((member) => {
-      return member.id === e.currentTarget.id;
-    });
+  // handleClick(e) {
+  //   let memberById = this.props.data.filter((member) => {
+  //     return member.id === e.currentTarget.id;
+  //   });
 
-    memberById = memberById[0];
+  //   memberById = memberById[0];
 
-    this.setState({
-      isOpen: true,
-      member: memberById,
-    });
-  }
+  //   this.setState({
+  //     isOpen: true,
+  //     member: memberById,
+  //   });
+  // }
 
-  reset() {
-    this.setState({
-      isOpen: false,
-    });
-  }
+  // reset() {
+  //   this.setState({
+  //     isOpen: false,
+  //   });
+  // }
 
   render() {
     return (
       <main>
-        {this.props.data.map((member) => {
+        {/* {this.props.data.map((member) => {
           const randomBG = {
             background: `hsl(${Math.floor(Math.random() * 360)}, ${Math.floor(
               Math.random() * 40
@@ -66,7 +66,7 @@ class Modal extends React.Component {
               </div>
             </div>
           );
-        })}
+        })} */}
 
         <div className="overlay-card">
           {this.state.isOpen === true ? (

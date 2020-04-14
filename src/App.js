@@ -3,36 +3,94 @@ import "./styles/App.css";
 import data from "../src/employees.json";
 import Hero from "./components/hero/";
 import Modal from "./components/modal/";
+import Footer from "./components/footer";
 
-function App() {
-  const numOfMembers = data.length;
+class App extends React.Component {
+  constructor(props) {
+    super(props);
 
-  return (
-    <div className="App">
-      <Hero />
-      <section className="main-content">
-        <h2 className="main-subheader">
-          Our team of<span className="numOfMembers">{numOfMembers}</span>
-          strategists, designers, managers, developers make custom products for
-          startups and leading brands.
-        </h2>
+    this.state = {
+      isOpen: false,
+      member: {},
+    };
 
-        <Modal data={data} />
-      </section>
-      <footer className="base-footer">
-        <div>
-          Icons made by{" "}
-          <a href="https://www.flaticon.com/authors/freepik" title="Freepik">
-            Freepik
-          </a>{" "}
-          from{" "}
-          <a href="https://www.flaticon.com/" title="Flaticon">
-            www.flaticon.com
-          </a>
-        </div>
-      </footer>
-    </div>
-  );
+    this.numOfMembers = data.length;
+    this.handleClick = this.handleClick.bind(this);
+    this.reset = this.reset.bind(this);
+  }
+
+  handleClick(e) {
+    let memberById = data.filter((member) => {
+      return member.id === e.currentTarget.id;
+    });
+
+    memberById = memberById[0];
+
+    this.setState({
+      isOpen: true,
+      member: memberById,
+    });
+  }
+
+  reset() {
+    this.setState({
+      isOpen: false,
+    });
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Hero />
+        <section className="main-content">
+          <h2 className="main-subheader">
+            Our team of<span className="numOfMembers">{this.numOfMembers}</span>
+            strategists, designers, managers, developers make custom products
+            for startups and leading brands.
+          </h2>
+
+          {/* <Modal data={data} /> */}
+
+          <div className="grid-card">
+            {data.map((member) => {
+              const randomBG = {
+                background: `hsl(${Math.floor(
+                  Math.random() * 360
+                )}, ${Math.floor(Math.random() * 40)}%, 40%)`,
+              };
+
+              return (
+                <div
+                  onClick={this.handleClick}
+                  id={member.id}
+                  className="card"
+                  key={member.id}
+                >
+                  <div className="bg-dark" style={randomBG}></div>
+                  <div className="card-content">
+                    <img
+                      className="avatar"
+                      src={member.avatar}
+                      alt={member.firstName}
+                    />
+
+                    <div className="full-name">
+                      <span>{member.firstName} </span>
+                      <span>{member.lastName}</span>
+                    </div>
+                    <div className="job-title">{member.jobTitle}</div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <Modal />
+        </section>
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default App;
