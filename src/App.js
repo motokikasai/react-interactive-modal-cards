@@ -21,6 +21,8 @@ class App extends React.Component {
 
   handleClick(e) {
     let memberById = data.filter((member) => {
+      console.log(e.currentTarget.id);
+
       return member.id === e.currentTarget.id;
     });
 
@@ -85,7 +87,7 @@ class App extends React.Component {
             })}
           </div>
 
-          <Modal />
+          <Modal data={this.state} />
         </section>
         <Footer />
       </div>
