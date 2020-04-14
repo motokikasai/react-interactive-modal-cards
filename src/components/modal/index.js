@@ -60,7 +60,7 @@ class Modal extends React.Component {
                   type="checkbox"
                   className="checkbox"
                   name="name"
-                  // onChange={() => this.props.reset()}
+                  onChange={() => this.props.reset()}
                 />
                 <article>
                   <aside>
@@ -70,7 +70,10 @@ class Modal extends React.Component {
                     ></div>
                   </aside>
                   <header className={this.props.theme}>
-                    <h2>{this.props.children}</h2>
+                    <h2>
+                      {this.props.data.member.firstName}{" "}
+                      {this.props.data.member.lastName}
+                    </h2>
                   </header>
                   {/* <div className="overlay-content">
                     <div className="profile-pic">
