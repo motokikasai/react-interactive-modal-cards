@@ -75,6 +75,8 @@ class Modal extends React.Component {
                       {this.props.data.member.lastName}
                     </h2>
                   </header>
+                  {this.props.children}
+
                   {/* <div className="overlay-content">
                     <div className="profile-pic">
                       <img
