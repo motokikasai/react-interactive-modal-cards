@@ -28,7 +28,6 @@ body {
     6px 6px 12px rgba(17, 17, 17, 0.5);
 
   transform: rotateY(0deg);
-  transition: 0.3s;
 }
 
 .card:hover {
@@ -50,9 +49,16 @@ body {
   left: 0;
   width: 100%;
   height: 111px;
-  background: rgb(34, 34, 34);
+  /*  background: rgb(34, 34, 34);  */
+  background: linear-gradient(to right, #895cf2 0%, #ffabf4 50%, #895cf2 100%);
+  background-size: 380%;
+  transition: background-position 0.4s cubic-bezier(0.29, 0.78, 0, 1.31);
   border-radius: 5px 5px 0 0;
   z-index: -1;
+}
+
+.card:hover .bg-dark {
+  background-position: 95%;
 }
 
 .numOfMembers {
