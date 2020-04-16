@@ -8,6 +8,10 @@ import PhoneIcon from "./assets/phone.svg";
 import EmailIcon from "./assets/mail.svg";
 import UrlIcon from "./assets/url.svg";
 
+const styles = {
+  transition: "all 1s ease-out",
+};
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -15,6 +19,7 @@ class App extends React.Component {
     this.state = {
       isOpen: false,
       member: {},
+      opacity: 0,
     };
 
     this.numOfMembers = data.length;
@@ -23,6 +28,13 @@ class App extends React.Component {
     this.findIndex = this.findIndex.bind(this);
     this.handleNext = this.handleNext.bind(this);
     this.handlePrev = this.handlePrev.bind(this);
+    this.onload = this.onload.bind(this);
+  }
+
+  onload() {
+    this.setState({
+      opacity: 1,
+    });
   }
 
   handleOpen(e) {
@@ -84,18 +96,14 @@ class App extends React.Component {
 
           <div className="grid-card">
             {data.map((member) => {
-              // const randomBG = {
-              //   background: `hsl(${Math.floor(
-              //     Math.random() * 360
-              //   )}, ${Math.floor(Math.random() * 40)}%, 40%)`,
-              // };
-
               return (
                 <div
                   onClick={this.handleOpen}
+                  onLoad={this.onload}
                   id={member.id}
                   className="card"
                   key={member.id}
+                  style={{ ...styles, opacity: this.state.opacity }}
                 >
                   <div className="bg-dark"></div>
                   <div className="card-content">
