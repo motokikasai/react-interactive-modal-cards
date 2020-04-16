@@ -9,7 +9,7 @@ import EmailIcon from "./assets/mail.svg";
 import UrlIcon from "./assets/url.svg";
 
 const styles = {
-  transition: "all 1s ease-out",
+  transition: "all 0.4s cubic-bezier(.29,.78,0,1.31)",
 };
 
 class App extends React.Component {
@@ -20,6 +20,7 @@ class App extends React.Component {
       isOpen: false,
       member: {},
       opacity: 0,
+      transform: "scale(0.5) rotate(0)",
     };
 
     this.numOfMembers = data.length;
@@ -34,6 +35,7 @@ class App extends React.Component {
   onload() {
     this.setState({
       opacity: 1,
+      transform: "scale(1)",
     });
   }
 
@@ -103,7 +105,11 @@ class App extends React.Component {
                   id={member.id}
                   className="card"
                   key={member.id}
-                  style={{ ...styles, opacity: this.state.opacity }}
+                  style={{
+                    ...styles,
+                    opacity: this.state.opacity,
+                    transform: `${this.state.transform} rotateY(0)`,
+                  }}
                 >
                   <div className="bg-dark"></div>
                   <div className="card-content">
