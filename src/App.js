@@ -50,8 +50,6 @@ class App extends React.Component {
       isOpen: true,
       member: memberById,
     });
-
-    console.log(this.state.member);
   }
 
   findIndex() {
