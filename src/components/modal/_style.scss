@@ -32,7 +32,7 @@ section.card-main {
   color: rgb(65, 65, 65);
   border-radius: 5px;
   box-shadow: 0 0 40px rgb(27, 27, 27);
-  transform: translateX(-7px);
+  transform: translateX(-8px);
 }
 
 header {
@@ -211,7 +211,8 @@ button.left:active {
 @media (max-width: 870px) {
   section.card-main {
     bottom: 0px;
-    width: 98vw;
+    width: 100%;
+    transform: translateX(-9px);
   }
 
   .overlay-content {
