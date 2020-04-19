@@ -61,7 +61,9 @@ class App extends React.Component {
   handleNext() {
     this.findIndex();
     this.index === data.length - 1
-      ? this.setState({ member: data[0] })
+      ? this.setState({
+          member: data[0],
+        })
       : this.setState({
           member: data[this.index + 1],
         });
