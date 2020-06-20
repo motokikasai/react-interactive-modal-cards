@@ -9,4 +9,4 @@
   <img src="./src/assets/20200620-interactive-modal.gif" width="600px">
 </p>
 
-<a href="./src/assets/20200620-interactive-modal.gif"><h3 align="center">DEMO</h3></a>
+<a href="https://react-interactive-cards.netlify.app/" target="_blank"><h3 align="center">DEMO</h3></a>
